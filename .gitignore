@@ -4,3 +4,5 @@ resume.fls
 resume.out
 resume.log
 resume.synctex.gz
+*.otf
+*.ttf
