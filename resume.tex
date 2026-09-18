@@ -1,36 +1,36 @@
 % Document class and font size
 \documentclass[a4paper,10pt]{extarticle}
 
-% Compile Command: 
-% latexmk -pdf resume.tex  
+% Compile Command:
+% latexmk -pdf resume.tex
 
 % -----------------------------------------------------------
 % PACKAGES
 % -----------------------------------------------------------
-\usepackage{geometry} 
+\usepackage{geometry}
 % Adjusted margins to 0.4in to fit everything on one page comfortably
-\geometry{letterpaper, margin=0.4in} 
-\usepackage{titlesec} 
-\usepackage{enumitem} 
-\usepackage{hyperref} 
+\geometry{letterpaper, margin=0.4in}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
 \usepackage{xcolor}
-\usepackage{array}    
-\usepackage{microtype} 
+\usepackage{array}
+\usepackage{microtype}
 
 % -----------------------------------------------------------
 % FORMATTING
 % -----------------------------------------------------------
-\setlist{noitemsep} 
-\hyphenpenalty=10000 
-\titleformat{\section}{\large\bfseries\uppercase}{\thesection}{1em}{}[\titlerule] 
+\setlist{noitemsep}
+\hyphenpenalty=10000
+\titleformat{\section}{\large\bfseries\uppercase}{\thesection}{1em}{}[\titlerule]
 \titlespacing*{\section}{0pt}{8pt}{5pt} % Tight spacing
 
 % Link Formatting
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
-    filecolor=magenta,      
-    urlcolor=black, 
+    filecolor=magenta,
+    urlcolor=black,
 }
 
 %-------------------------------------------------------------------------------
@@ -45,9 +45,9 @@
 \begin{center}
     \textbf{\Huge RUDRA CHAVDA}\\[4pt]
     \small
-    \href{mailto:rudrabchavda@gmail.com}{rudrabchavda@gmail.com} \ $|$ \ 
-    \href{https://www.linkedin.com/in/rudra-chavda/}{LinkedIn: rudra-chavda} \ $|$ \ 
-    \href{https://rudra.chavda.online/}{Portfolio: rudra.chavda.online} \ $|$ \ 
+    \href{mailto:rudrabchavda@gmail.com}{rudrabchavda@gmail.com} \ $|$ \
+    \href{https://www.linkedin.com/in/rudra-chavda/}{LinkedIn: rudra-chavda} \ $|$ \
+    \href{https://rudra.chavda.online/}{Portfolio: rudra.chavda.online} \ $|$ \
     U.S. Permanent Resident
 \end{center}
 
@@ -56,22 +56,31 @@
 \section*{EDUCATION}
     \noindent
     \textbf{University of California, Santa Barbara} \hfill Expected Spring 2028 \\
+    \textit{Bachelor of Science, Computer Engineering} 
+
+\vspace{4pt}
+
+    \noindent
+    \textbf{University of California, Santa Cruz} \hfill 2024 -- 2026 \\
     \textit{Bachelor of Science, Computer Engineering} \hfill \textbf{GPA: 3.95}
     \begin{itemize}[leftmargin=0.2in, label={--}]
         \item \textbf{Honors:} 6x Dean's List
-        \item \textbf{Coursework:} Data Structures and Algorithms, C Programming, Computer Architecture, Operating Systems, Software Engineering.
     \end{itemize}
+
+\vspace{2pt}
+\noindent
+\textbf{Coursework:} Systems programming, computer architecture, operating systems, data structures and algorithms, and software engineering.
 
 
 %------------------------
 % Technical Skills Section
 \section*{TECHNICAL SKILLS}
     \noindent
-    \begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+    \begin{tabular}{ @{} >{\bfseries}p{0.12\textwidth} @{\hspace{2ex}} >{\raggedright\arraybackslash}p{0.84\textwidth} @{} }
         Languages & Python, C, C++, Java, TypeScript, JavaScript, SQL, Assembly \\
-        Frameworks & Vue.js, React, Next.js, Node.js, Py4Web, Tailwind CSS, Angular \\
-        Tools & Git, Nautilus (Cluster), CARLA, Docker, GDAL, VS Code, Google Colab, Machine Learning \\
-        Concepts & Reinforcement Learning, Data Structures, Algorithms, System Design, Open Source, team building
+        Frameworks & Vue.js, React, Next.js, Node.js, Spring Boot, Py4Web, Tailwind CSS, Angular \\
+        Tools & Git, Github, MySQL, Flyway, Microsoft Graph API, JUnit, Docker, Nautilus (Cluster), CARLA, GDAL \\
+        Concepts & LLM Agents, Function Calling, OAuth 2.0, Reinforcement Learning, System Design, Data Structures, Algorithms
     \end{tabular}
 
 %------------------------
@@ -79,16 +88,17 @@
 \section*{EXPERIENCE}
 
     \noindent
-    \textbf{Ascend Cargo} \hfill June 2026 -- Present \\
+    \textbf{Ascend Cargo} \hfill Jun 2026 -- Sep 2026 \\
     \textit{AI/ML Intern}
     \begin{itemize}[leftmargin=0.2in, label={--}]
-        \item Built MCP Tools for a custom LLM agent with \textbf{(Java 21, Spring Boot, OpenAI function calling)}, letting operations staff create and update freight orders up to \textbf{300\% faster} for customers
-        \item \textbf{Designed and shipped an inbound email channel over the Microsoft Graph API} with OAuth client-credentials auth, allowing verified staff to query live shipment and order data by emailing a shared mailbox
-        \item \textbf{Hardened agent tool design after live-demo failures: replaced silent fallbacks} (arbitrary tenant selection, defaulting missing timestamps to now()) with explicit clarifying questions, eliminating a class of plausible-looking-but-wrong records.
-        \item \textbf{Authored 43 unit tests} covering authorization, tenant isolation, prompt-injection stripping, and serialization, plus operator documentation for the Entra ID and Exchange configuration.
-    \end{itemize} 
-    \vspace{5pt}
-    
+        \item Built an \textbf{LLM agent framework} (\textbf{Java 23, Spring Boot 3.4, OpenAI function calling}) with annotation-driven tool registration, automatic JSON-Schema generation, and LLM-based intent routing that scopes which tools each request may reach.
+        \item Shipped natural-language \textbf{create/update for freight shipments and orders}, replacing multi-screen data entry; diagnosed and fixed a synchronous automation call that blocked shipment creation for \textbf{12 minutes, cutting it to under 30 seconds.}
+        \item Designed a \textbf{two-gate authorization model} enforcing a per-user AI access ceiling (\textbf{NONE/READ/WRITE}) alongside existing app privileges, guaranteeing the agent can never exceed the permissions of the human it acts for.
+        \item Delivered an \textbf{inbound email channel over the Microsoft Graph API} (\textbf{OAuth 2.0 client credentials}) letting verified staff create and modify shipments by emailing a shared mailbox, with sender verification resolved per-user from the database.
+        \item Hardened agent behavior after live-demo failures: replaced silent fallbacks with \textbf{refuse-and-instruct} error contracts that tell the model how to recover, eliminating a class of confidently-wrong records.
+        \item Authored \textbf{122 unit tests} (\textbf{JUnit 5, Mockito}) plus a CLI harness that drives the chat API and verifies results against the database, and integrated 3 months of upstream divergence across 38 conflicting files.
+    \end{itemize}
+
     \noindent
     \textbf{AIEA Lab (UCSC)} \hfill Dec 2025 -- Apr 2026 \\
     \textit{Undergraduate Researcher}
@@ -96,7 +106,7 @@
         \item Wrote and benchmarked Reinforcement Learning (RL) algorithms such as \textbf{DQN}, \textbf{DDQN}, \textbf{A3C}, and \textbf{Stable Baselines} in the Car Racing environment to evaluate autonomous vehicle safety as part of the Robustifying AV's project.
         \item Deploying the \textbf{CARLA} simulator in a headless environment on the \textbf{Nautilus} hyper-cluster (Kubernetes).
         \item Analyzed edge-case failures by visualizing agent behaviors and reward functions post-training.
-    \end{itemize} 
+    \end{itemize}
     \vspace{5pt}
 
     \noindent
@@ -106,7 +116,7 @@
         \item Developed a full-stack conservation modeling application using \textbf{Vue.js} (frontend) and \textbf{Py4Web} (backend).
         \item Integrated geospatial analysis tools (\textbf{GDAL}, Ecoscape) to track species connectivity and visualize ecological data.
         \item Optimized simulation parameters to process large-scale biological datasets for the Ecology Lab.
-    \end{itemize} 
+    \end{itemize}
     \vspace{5pt}
 
     \noindent
@@ -114,10 +124,12 @@
     \textit{Campus Growth Lead}
     \begin{itemize}[leftmargin=0.2in, label={--}]
         \item Co-organized UCSC Cruzhacks in collaboration with Opennote where we gave out \$1500 worth of prizes.
-        \item Organized workshops talking about user-agent API flow in typescript. 
+        \item Organized workshops talking about user-agent API flow in typescript.
         \item Spearheaded campus growth strategy, increasing user engagement by 30\% and acquiring 50+ active users.
-    \end{itemize} 
+    \end{itemize}
     \vspace{5pt}
+
+\newpage
 
     \noindent
     \textbf{Fassur} \hfill June 2023 -- Oct 2023 \\
@@ -147,11 +159,11 @@
         \item Implemented categorization metrics (interpretability, coverage, anomalies) to improve ML model fairness.
     \end{itemize}
     \vspace{5pt}
-    
+
     \noindent
-    \textbf{Personal Portfolio} $|$ \textit{Next.js, Three.js, GSAP} \hfill Winter 2024
+    \textbf{Personal Portfolio} $|$ \textit{Next.js, Three.js, Motion} \hfill Winter 2024
     \begin{itemize}[leftmargin=0.2in, label={--}]
-        \item Built a high-performance portfolio site featuring 3D interactive elements using Three.js and GSAP animations.
+        \item Built a high-performance portfolio site featuring 3D interactive elements using Three.js and Motion animations.
     \end{itemize}
 
 %------------------------
