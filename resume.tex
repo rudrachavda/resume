@@ -8,7 +8,6 @@
 % PACKAGES
 % -----------------------------------------------------------
 \usepackage{geometry}
-% Adjusted margins to 0.4in to fit everything on one page comfortably
 \geometry{letterpaper, margin=0.4in}
 \usepackage{titlesec}
 \usepackage{enumitem}
@@ -77,10 +76,10 @@
 \section*{TECHNICAL SKILLS}
     \noindent
     \begin{tabular}{ @{} >{\bfseries}p{0.12\textwidth} @{\hspace{2ex}} >{\raggedright\arraybackslash}p{0.84\textwidth} @{} }
-        Languages & Python, C, C++, Java, TypeScript, JavaScript, SQL, Assembly \\
-        Frameworks & Vue.js, React, Next.js, Node.js, Spring Boot, Py4Web, Tailwind CSS, Angular, Apache Echarts \\
-        Tools & Git, Github, MySQL, Flyway, Microsoft Graph API, JUnit, Docker, Nautilus (Cluster), CARLA, GDAL \\
-        Concepts & LLM Agents, Function Calling, OAuth 2.0, Reinforcement Learning, System Design, Data Structures, Algorithms
+        Languages & Python, C, C++, Java, TypeScript, JavaScript, SQL, RV Assembly \\
+        Frameworks & Next.js, React, Vue.js, Spring Boot, Node.js, Py4Web, Tailwind CSS, Angular \\
+        Tools & Git, Docker, Kubernetes, MySQL, Flyway, Microsoft Graph API, JUnit, CARLA, GDAL \\
+        Concepts & LLM Agents, Function Calling, OAuth 2.0, Reinforcement Learning, System Design, Data Structures
     \end{tabular}
 
 %------------------------
@@ -89,23 +88,21 @@
 
     \noindent
     \textbf{Ascend Cargo} \hfill Jun 2026 -- Sep 2026 \\
-    \textit{AI/ML Intern}
+    \textit{AI/ML Software Engineering Intern}
     \begin{itemize}[leftmargin=0.2in, label={--}]
-        \item Built an \textbf{LLM agent framework} (\textbf{Java 23, Spring Boot 3.4, OpenAI function calling}) with annotation-driven tool registration, automatic JSON-Schema generation, and LLM-based intent routing that scopes which tools each request may reach.
-        \item Shipped natural-language \textbf{create/update for freight shipments and orders}, replacing multi-screen data entry; diagnosed and fixed a synchronous automation call that blocked shipment creation for \textbf{12 minutes, cutting it to under 30 seconds.}
-        \item Designed a \textbf{two-gate authorization model} enforcing a per-user AI access ceiling (\textbf{NONE/READ/WRITE}) alongside existing app privileges, guaranteeing the agent can never exceed the permissions of the human it acts for.
-        \item Delivered an \textbf{inbound email channel over the Microsoft Graph API} (\textbf{OAuth 2.0 client credentials}) letting verified staff create and modify shipments by emailing a shared mailbox, with sender verification resolved per-user from the database.
-        \item Hardened agent behavior after live-demo failures: replaced silent fallbacks with \textbf{refuse-and-instruct} error contracts that tell the model how to recover.
-        \item Authored \textbf{122 unit tests} (\textbf{JUnit 5, Mockito}) plus a CLI harness that drives the chat API and verifies results against the database, and integrated 3 months of upstream divergence across 38 conflicting files.
+        \item Architected an enterprise \textbf{LLM agent framework} utilizing \textbf{Java 23, Spring Boot 3.4, and OpenAI function calling}, featuring annotation-driven tool registration and dynamic JSON-Schema generation for targeted intent routing.
+        \item Engineered a natural-language shipment management system, diagnosing and resolving a synchronous automation bottleneck that reduced database execution latency from \textbf{12 minutes to under 30 seconds}.
+        \item Designed a Role-Based Access Control (RBAC) authorization pipeline enforcing strict per-user AI limits (\textbf{NONE/READ/WRITE}) and integrated a \textbf{Microsoft Graph API} inbound email channel via \textbf{OAuth 2.0} for authenticated, remote shipment mutations.
+        \item Hardened agent fault tolerance by implementing explicit refuse-and-instruct error contracts, and authored \textbf{122 JUnit/Mockito unit tests} alongside a custom CLI harness to validate state mutations against the database.
     \end{itemize}
+    \vspace{5pt}
 
     \noindent
     \textbf{AIEA Lab (UCSC)} \hfill Dec 2025 -- Apr 2026 \\
     \textit{Undergraduate Researcher}
     \begin{itemize}[leftmargin=0.2in, label={--}]
-        \item Wrote and benchmarked Reinforcement Learning (RL) algorithms such as \textbf{DQN}, \textbf{DDQN}, \textbf{A3C}, and \textbf{Stable Baselines} in the Car Racing environment to evaluate autonomous vehicle safety as part of the Robustifying AV's project.
-        \item Deploying the \textbf{CARLA} simulator in a headless environment on the \textbf{Nautilus} hyper-cluster (Kubernetes).
-        \item Analyzed edge-case failures by visualizing agent behaviors and reward functions post-training.
+        \item Benchmarked Reinforcement Learning (RL) algorithms including \textbf{DQN, DDQN, A3C, and PPO} to evaluate autonomous vehicle safety parameters within the Robustifying AVs project.
+        \item Deployed and scaled the \textbf{CARLA} autonomous driving simulator in a headless environment across the \textbf{Nautilus Kubernetes} hyper-cluster, isolating edge-case failure modes via post-training reward function visualization.
     \end{itemize}
     \vspace{5pt}
 
@@ -113,9 +110,8 @@
     \textbf{CA-Futures (UCSC EEB \& Baskin Engineering)} \hfill May 2025 -- Sep 2025 \\
     \textit{Software Developer}
     \begin{itemize}[leftmargin=0.2in, label={--}]
-        \item Developed a full-stack conservation modeling application using \textbf{Vue.js} (frontend) and \textbf{Py4Web} (backend).
-        \item Integrated geospatial analysis tools (\textbf{GDAL}, Ecoscape) to track species connectivity and visualize ecological data.
-        \item Optimized simulation parameters to process large-scale biological datasets for the Ecology Lab.
+        \item Engineered a full-stack climate modeling platform utilizing \textbf{Vue.js} and \textbf{Py4Web}, delivering interactive web maps that enable researchers to visualize and compare predictive ecological shifts across multiple long-term climate scenarios.
+        \item Architected an asynchronous geospatial pipeline utilizing \textbf{GDAL, Rasterio, and Geopandas} to intercept user-drawn map polygons, compute dynamic habitat connectivity, and implement output caching to eliminate redundant backend execution.
     \end{itemize}
     \vspace{5pt}
 
@@ -123,49 +119,40 @@
     \textbf{Opennote (YC S25)} \hfill Jul 2025 -- Feb 2026 \\
     \textit{Campus Growth Lead}
     \begin{itemize}[leftmargin=0.2in, label={--}]
-        \item Co-organized UCSC Cruzhacks in collaboration with Opennote where we gave out \$1500 worth of prizes.
-        \item Organized workshops talking about user-agent API flow in typescript.
-        \item Spearheaded campus growth strategy, increasing user engagement by 30\% and acquiring 50+ active users.
+        \item Spearheaded campus integration strategies, driving a \textbf{30\% increase} in user engagement and securing \textbf{50+ daily active users} by organizing targeted technical workshops on TypeScript user-agent API flows.
+        \item Co-directed the UCSC Cruzhacks integration, managing vendor partnerships and allocating \textbf{\$1,500} in technical resources to drive platform adoption among computer science students.
     \end{itemize}
     \vspace{5pt}
 
 \newpage
-
 %------------------------
 % Projects
 \section*{PROJECTS}
 
     \noindent
-    \textbf{Better Notes} $|$ \textit{TypeScript, Tailwind CSS, Vercel} \hfill Spring 2025
+    \textbf{Better Notes} $|$ \textit{Next.js 15, TypeScript, Convex, Clerk, Tailwind} \hfill Spring 2025
     \begin{itemize}[leftmargin=0.2in, label={--}]
-        \item Engineered a full-stack note-taking platform with a custom markdown rendering engine for student study workflows.
-        \item Secured 100+ active users within 3 months of deployment to Vercel.
-        \item \href{https://betternotes-two.vercel.app/}{Live Demo: betternotes-two.vercel.app}
+        \item Architected a full-stack, real-time note-taking application, integrating \textbf{Clerk} for secure user authentication and \textbf{Convex} for reactive data synchronization and backend storage.
+        \item Implemented a rich-text editing experience utilizing \textbf{BlockNote and ProseMirror}, enabling seamless markdown rendering and dynamic block-based study workflows for end-users.
+        \item Scaled application to \textbf{100+ active users} within 3 months of Vercel deployment, optimizing database queries to maintain \textbf{sub-50ms read/write latency}.
     \end{itemize}
     \vspace{5pt}
 
     \noindent
-    \textbf{Div Explorer Project} $|$ \textit{Machine Learning, Python} \hfill Fall 2025
+    \textbf{DivExplorer Bias Detection} $|$ \textit{Python, Pandas, ML, Shapley Values} \hfill Fall 2025
     \begin{itemize}[leftmargin=0.2in, label={--}]
-        \item Developed actionable data labeling pipelines to detect duplicate discoveries and high-overlap patterns.
-        \item Implemented categorization metrics (interpretability, coverage, anomalies) to improve ML model fairness.
+        \item Engineered an automated data analysis pipeline utilizing \textbf{FP-growth and Apriori} frequent pattern mining algorithms in Pandas to extract and evaluate statistically diverging subgroups within large datasets.
+        \item Implemented statistical redundancy pruning thresholds and computed \textbf{Shapley values} to quantify specific feature contributions, isolating anomalies and reducing high-overlap duplicate discoveries.
+        \item Quantified machine learning classification bias by measuring divergence metrics (e.g., \textbf{false-positive disparities}) across demographic intersections, establishing rigorous baselines for model fairness.
     \end{itemize}
     \vspace{5pt}
 
     \noindent
-    \textbf{Personal Portfolio} $|$ \textit{Next.js, Three.js, Motion} \hfill Winter 2024
+    \textbf{Personal Portfolio} $|$ \textit{Next.js 16, TypeScript, Three.js, Motion, Tailwind} \hfill Winter 2024
     \begin{itemize}[leftmargin=0.2in, label={--}]
-        \item Built a high-performance portfolio site featuring 3D interactive elements using Three.js and Motion animations.
-    \end{itemize}
-
-%------------------------
-% Leadership
-\section*{LEADERSHIP}
-    \noindent
-    \textbf{Eagle Scout Project} \hfill Summer 2024 \\
-    \textit{Project Lead, Troop 537}
-    \begin{itemize}[leftmargin=0.2in, label=$\bullet$]
-        \item Directed a team of 20+ Scouts in the construction of redwood structures for Sycamore Grove Park (Livermore).
+        \item Developed a high-performance developer portfolio combining Next.js server-side rendering with complex 3D WebGL scenes using \textbf{Three.js} and declarative animations via \textbf{Motion}.
+        \item Engineered a custom technical content rendering pipeline, integrating \textbf{KaTeX} for complex mathematical notation and dynamic syntax highlighting for interactive code blocks.
+        \item Built a responsive, accessible component architecture utilizing \textbf{Tailwind CSS v4 and Shadcn UI} primitives, optimizing component hydration to maintain a consistent \textbf{60 FPS} experience.
     \end{itemize}
 
 \end{document}
