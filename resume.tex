@@ -15,6 +15,7 @@
 \usepackage{xcolor}
 \usepackage{array}
 \usepackage{microtype}
+\usepackage{lmodern}
 
 % -----------------------------------------------------------
 % FORMATTING
@@ -55,16 +56,13 @@
 \section*{EDUCATION}
     \noindent
     \textbf{University of California, Santa Barbara} \hfill Expected Spring 2028 \\
-    \textit{Bachelor of Science, Computer Engineering} 
+    \textit{Bachelor of Science, Computer Engineering} \hfill \textbf{GPA: 3.86}
 
-\vspace{4pt}
+\vspace{5pt}
 
     \noindent
     \textbf{University of California, Santa Cruz} \hfill 2024 -- 2026 \\
-    \textit{Bachelor of Science, Computer Engineering} \hfill \textbf{GPA: 3.86}
-    \begin{itemize}[leftmargin=0.2in, label={--}]
-        \item \textbf{Honors:} 6x Dean's List
-    \end{itemize}
+    \textit{Bachelor of Science, Computer Engineering} \hfill \textbf{Honors:} 6x Dean's List
 
 \vspace{2pt}
 \noindent
@@ -92,7 +90,7 @@
     \begin{itemize}[leftmargin=0.2in, label={--}]
         \item Architected an enterprise \textbf{LLM agent framework} utilizing \textbf{Java 23, Spring Boot 3.4, and OpenAI function calling}, featuring annotation-driven tool registration and dynamic JSON-Schema generation for targeted intent routing.
         \item Engineered a natural-language shipment management system, diagnosing and resolving a synchronous automation bottleneck that reduced database execution latency from \textbf{12 minutes to under 30 seconds}.
-        \item Designed a Role-Based Access Control (RBAC) authorization pipeline enforcing strict per-user AI limits (\textbf{NONE/READ/WRITE}) and integrated a \textbf{Microsoft Graph API} inbound email channel via \textbf{OAuth 2.0} for authenticated, remote shipment mutations.
+        \item Designed a Role-Based Access Control (RBAC) authorization pipeline enforcing strict per-user AI limits (\textbf{NONE\slash READ\slash WRITE}) and integrated a \textbf{Microsoft Graph API} inbound email channel via \textbf{OAuth 2.0} for authenticated, remote \textbf{shipment creation and updates}.
         \item Hardened agent fault tolerance by implementing explicit refuse-and-instruct error contracts, and authored \textbf{122 JUnit/Mockito unit tests} alongside a custom CLI harness to validate state mutations against the database.
     \end{itemize}
     \vspace{5pt}
